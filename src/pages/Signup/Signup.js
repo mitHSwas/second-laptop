@@ -1,30 +1,65 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { createUser, updateUser } = useContext(AuthContext);
+    const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState("");
+    const navigate = useNavigate()
     const handleSignup = data => {
+        const name = data.name;
+        const email = data.email;
+        const password = data.password;
+        const role = data.role;
+        console.log(name, email, password, role);
         setSignUpError("")
-        createUser(data.email, data.password)
+        createUser(email, password)
             .then(result => {
                 const user = result.user;
                 const userInfo = {
-                    displayName: data.name
+                    displayName: name
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        toast.success("User created successfully.")
+                        saveUser(name, email, role);
                     })
                     .catch(err => console.log(err))
             })
             .catch(err => {
                 console.log(err)
                 setSignUpError(err.message)
+            })
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user
+                const role = "buyer";
+                saveUser(user.displayName, user.email, role)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role }
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success("User created successfully.")
+                    navigate('/')
+                }
             })
     }
     return (
@@ -46,14 +81,19 @@ const Signup = () => {
                         message: "Password must have uppercase, lowercase, number and special characters",
                     }
                 })}
-                    placeholder="password" className="input input-bordered w-full mb-4" />
+                    placeholder="password" className="input input-bordered w-full mb-2" />
                 {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+                <label className="label"><span className="label-text">Account as</span></label>
+                <select {...register("role", { required: true })} className="select select-bordered w-full mb-4">
+                    <option selected value="buyer">Buyer</option>
+                    <option value="seller">Seller</option>
+                </select>
                 <button className='btn btn-outline w-full' type="submit">Signup</button>
                 <p className='text-sm mb-2'>Already have an account <Link className='text-info font-semibold' to='/login'>Please login</Link></p>
             </form>
             {signUpError && <p className='text-red-500'>{signUpError}</p>}
             <div className="divider">OR</div>
-            <button className='btn btn-outline btn-warning w-full mb-5'>Continue With Google</button>
+            <button onClick={handleGoogleSignIn} className='btn btn-outline btn-warning w-full mb-5'>Google SignIn As Buyer</button>
         </div>
     );
 };

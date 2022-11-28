@@ -1,6 +1,7 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 
-const BookingModal = ({ product }) => {
+const BookingModal = ({ product, setProduct }) => {
     const { _id, productName, picture, reSellPrice, sellerName } = product;
     const handleBooking = event => {
         event.preventDefault();
@@ -14,7 +15,20 @@ const BookingModal = ({ product }) => {
             location,
             reSellPrice
         }
-        console.log(productInfo);
+        fetch('http://localhost:5000/booking', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(productInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    setProduct(null)
+                    toast.success("Booked Confirmed")
+                }
+            })
     }
     return (
         <div>

@@ -1,24 +1,40 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, googleSignIn } = useContext(AuthContext);
     const [loginError, setLoginError] = useState("");
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    let from = location.state?.from?.pathname || "/";
+
     const handleLogin = data => {
         setLoginError("")
         signInUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
                 toast.success("User login successful.")
             })
             .catch(err => {
                 console.log(err)
                 setLoginError(err.message)
+            })
+    }
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result);
+                navigate(from, { replace: true });
+            })
+            .catch(err => {
+                console.log(err)
             })
     }
     return (
@@ -40,7 +56,7 @@ const Login = () => {
             </form>
             {loginError && <p className='text-red-500'>{loginError}</p>}
             <div className="divider">OR</div>
-            <button className='btn btn-outline btn-warning w-full mb-5'>Continue With Google</button>
+            <button onClick={handleGoogleSignIn} className='btn btn-outline btn-warning w-full mb-5'>Continue With Google</button>
         </div>
     );
 };
