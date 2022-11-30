@@ -22,7 +22,7 @@ const ProductCategories = () => {
                 {
                     categories.map(category => <ProductCategory
                         key={category._id}
-                        category={category}
+                        categories={category}
                     ></ProductCategory>)
                 }
             </div>

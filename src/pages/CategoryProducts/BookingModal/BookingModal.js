@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const BookingModal = ({ product, setProduct }) => {
+    const { user } = useContext(AuthContext);
+    const name = user.displayName;
+    const email = user.email;
     const { _id, productName, picture, reSellPrice, sellerName } = product;
     const handleBooking = event => {
         event.preventDefault();
         const phone = event.target.phone.value;
         const location = event.target.location.value;
         const productInfo = {
+            name,
+            email,
             productName,
             picture,
             sellerName,
@@ -19,6 +25,7 @@ const BookingModal = ({ product, setProduct }) => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
+                authorization: `bearer ${localStorage.getItem('accessToken')}`,
             },
             body: JSON.stringify(productInfo)
         })
@@ -40,11 +47,11 @@ const BookingModal = ({ product, setProduct }) => {
                         <div className="grid gap-4 md:grid-cols-1 lg:grid-cols-2">
                             <div>
                                 <label className="label"><span className="label-text">Name</span></label>
-                                <input type="text" disabled defaultValue={"Name"} className="input input-bordered w-full" />
+                                <input type="text" disabled defaultValue={name} className="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label className="label"><span className="label-text">Email</span></label>
-                                <input type="text" disabled defaultValue={"email"} className="input input-bordered w-full" />
+                                <input type="text" disabled defaultValue={email} className="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label className="label"><span className="label-text">Product</span></label>
