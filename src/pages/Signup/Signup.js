@@ -7,7 +7,7 @@ import useToken from '../../hooks/useToken';
 
 const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
+    const { createUser, setLoading, updateUser, googleSignIn } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState("");
     const [signupUserEmail, setSignupUserEmail] = useState("");
     const [token] = useToken(signupUserEmail)
@@ -33,12 +33,14 @@ const Signup = () => {
                 updateUser(userInfo)
                     .then(() => {
                         saveUser(name, email, role);
+                        setLoading(false)
                     })
                     .catch(err => console.log(err))
             })
             .catch(err => {
                 console.log(err)
                 setSignUpError(err.message)
+                setLoading(false)
             })
     }
 
@@ -93,7 +95,7 @@ const Signup = () => {
                 {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                 <label className="label"><span className="label-text">Account as</span></label>
                 <select {...register("role", { required: true })} className="select select-bordered w-full mb-4">
-                    <option selected value="buyer">Buyer</option>
+                    <option defaultValue="buyer" value="buyer">Buyer</option>
                     <option value="seller">Seller</option>
                 </select>
                 <button className='btn btn-outline w-full' type="submit">Signup</button>

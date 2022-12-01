@@ -20,7 +20,7 @@ const ProductCategories = () => {
             <h2 className="mx-auto mb-10 font-bold text-4xl">All Category Of Products</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-7'>
                 {
-                    categories.map(category => <ProductCategory
+                    categories?.map(category => <ProductCategory
                         key={category._id}
                         categories={category}
                     ></ProductCategory>)
