@@ -8,7 +8,6 @@ const CategoryProducts = () => {
     const [product, setProduct] = useState(null)
     return (
         <section className='container mx-auto my-10'>
-            <p>Hello</p>
             <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     products.map(product => <ProductCard

@@ -10,6 +10,7 @@ import MyOrders from "../../pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../../pages/Dashboard/MyProducts/MyProducts";
 import Home from "../../pages/Home/Home/Home";
 import Login from "../../pages/Login/Login";
+import NotFound from "../../pages/NotFound/NotFound";
 import Signup from "../../pages/Signup/Signup";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import BuyerRoute from "../BuyerRoute/BuyerRoute";
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: "*",
+                element: <NotFound></NotFound>
             }
         ]
     },
@@ -68,6 +73,10 @@ const router = createBrowserRouter([
                 path: '/dashboard/allsellers',
                 element: <AdminRoute><AllSellers></AllSellers></AdminRoute>
             },
+            {
+                path: "*",
+                element: <NotFound></NotFound>
+            }
         ]
     }
 ])

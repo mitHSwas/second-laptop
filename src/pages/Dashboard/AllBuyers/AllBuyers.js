@@ -22,7 +22,6 @@ const AllBuyers = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-    console.log("all", allbuyers)
     return (
         <div>
             <h3 className='text-3xl text-center mt-3 font-semibold'>My all buyers</h3>
