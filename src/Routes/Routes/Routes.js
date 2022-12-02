@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             {
                 path: '/category/:categoryName',
                 element: <PrivateRoute><CategoryProducts></CategoryProducts></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.categoryName}`)
+                loader: ({ params }) => fetch(`https://y-tau-six.vercel.app/category/${params.categoryName}`)
             },
             {
                 path: '/login',

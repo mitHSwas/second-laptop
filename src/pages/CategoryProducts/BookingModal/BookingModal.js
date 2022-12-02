@@ -21,7 +21,7 @@ const BookingModal = ({ product, setProduct }) => {
             location,
             reSellPrice
         }
-        fetch('http://localhost:5000/booking', {
+        fetch('https://y-tau-six.vercel.app/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

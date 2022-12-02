@@ -37,11 +37,29 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
-                console.log(result);
-                setLoginError(result.user.email);
+                const user = result.user
+                const role = "buyer";
+                saveUser(user.displayName, user.email, role)
             })
             .catch(err => {
                 console.log(err)
+            })
+    }
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role }
+        fetch('https://y-tau-six.vercel.app/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success("User created successfully.")
+                    setLoginUserEmail(email)
+                }
             })
     }
     return (
@@ -63,7 +81,7 @@ const Login = () => {
             </form>
             {loginError && <p className='text-red-500'>{loginError}</p>}
             <div className="divider">OR</div>
-            <button onClick={handleGoogleSignIn} className='btn btn-outline btn-warning w-full mb-5'>Continue With Google</button>
+            <button onClick={handleGoogleSignIn} className='btn btn-outline btn-warning w-full mb-5'>Google SingIn As Buyer</button>
         </div>
     );
 };

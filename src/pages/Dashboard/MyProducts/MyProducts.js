@@ -9,7 +9,7 @@ const MyProducts = () => {
     const { data: products, isLoading, refetch } = useQuery({
         queryKey: ['products', 'email'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/products?email=${user.email}`, {
+            const res = await fetch(`https://y-tau-six.vercel.app/products?email=${user.email}`, {
                 headers: { authorization: `bearer ${localStorage.getItem("accessToken")}` }
             })
             const data = res.json();
@@ -17,7 +17,7 @@ const MyProducts = () => {
         }
     })
     const handleDeleteProduct = (id) => {
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://y-tau-six.vercel.app/products/${id}`, {
             method: "DELETE",
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -45,9 +45,9 @@ const MyProducts = () => {
                             <th>Index</th>
                             <th>Product</th>
                             <th>Name</th>
+                            <th>Price</th>
                             <th>Condition</th>
-                            <th>Status</th>
-                            <th>Click For</th>
+                            <th>Category</th>
                             <th>Click For</th>
                         </tr>
                     </thead>
@@ -61,7 +61,7 @@ const MyProducts = () => {
                                     </div>
                                 </div></td>
                                 <td>{product.productName}</td>
-                                <td>{product.price}</td>
+                                <td>{product.reSellPrice}</td>
                                 <td>{product.condition}</td>
                                 <td>{product.categoryName}</td>
                                 <td>

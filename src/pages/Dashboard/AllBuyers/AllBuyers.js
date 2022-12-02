@@ -1,13 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import Loading from '../../Shared/Loading/Loading';
 
 const AllBuyers = () => {
     const { user } = useContext(AuthContext);
-    const url = `http://localhost:5000/allbuyers?email=${user?.email}`;
+    const url = `https://y-tau-six.vercel.app/allbuyers?email=${user?.email}`;
 
-    const { data: allbuyers = [], isLoading } = useQuery({
+    const { data: allbuyers = [], isLoading, refetch } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
@@ -19,6 +20,21 @@ const AllBuyers = () => {
             return data;
         }
     })
+    const handleDeleteBuyer = (id) => {
+        fetch(`https://y-tau-six.vercel.app/users/${id}`, {
+            method: "DELETE",
+            headers: {
+                authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    toast.success("Buyer Deleted Successfully")
+                    refetch()
+                }
+            })
+    }
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -43,7 +59,7 @@ const AllBuyers = () => {
                                 <td>{buyers.name}</td>
                                 <td>{buyers.email}</td>
                                 <td>{buyers.role}</td>
-                                <td><button className='btn btn-sm btn-error'>Delete</button></td>
+                                <td><button onClick={() => handleDeleteBuyer(buyers._id)} className='btn btn-sm btn-error'>Delete</button></td>
                             </tr>)
                         }
                     </tbody>

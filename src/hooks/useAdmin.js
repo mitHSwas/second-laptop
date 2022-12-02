@@ -5,7 +5,7 @@ const useBuyer = email => {
     const [isAdminLoading, setIsAdminLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/admin/${email}`, {
+            fetch(`https://y-tau-six.vercel.app/users/admin/${email}`, {
                 headers: {
                     'content-type': 'application/json',
                     authorization: `Bearer ${localStorage.getItem("accessToken")}`,

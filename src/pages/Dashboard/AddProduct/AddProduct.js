@@ -24,14 +24,14 @@ const AddProduct = () => {
                         productName: data.product,
                         reSellPrice: data.price,
                         location: data.location,
-                        condition: data.condition,
+                        condition: data.category,
                         picture: formData.data.url,
                         phone: data.phoneNumber,
                         categoryName: data.category,
                         email: user.email,
                     }
                     // save product to the database
-                    fetch("http://localhost:5000/products", {
+                    fetch("https://y-tau-six.vercel.app/products", {
                         method: "POST",
                         headers: {
                             "content-type": "Application/json",
