@@ -7,7 +7,7 @@ const FeatureInfo = () => {
     const infoCards = [
         {
             icon: <GiSelfLove></GiSelfLove>,
-            title: "UI/UX",
+            title: "User Interface & Experience",
             description: "Mobile Optimized Design & Incredible Design/UI/UX, keep your store looking fresh and perfect.",
         },
         {
@@ -22,9 +22,9 @@ const FeatureInfo = () => {
         }
     ]
     return (
-        <div className='grid'>
-            <h2 className="mx-auto mb-10 font-bold text-4xl">Our Highlighted Features</h2>
-            <div className='grid gap-10 mb-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto container'>
+        <div className='container grid mx-auto'>
+            <h2 className="mx-auto my-14 text-success font-bold text-5xl">Our Highlighted Features</h2>
+            <div className='grid gap-10 mb-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     infoCards.map((card, i) => <FeatureCard
                         card={card}

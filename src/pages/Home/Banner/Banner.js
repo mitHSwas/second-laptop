@@ -18,7 +18,7 @@ const Banner = () => {
                                 <h1 className="text-5xl font-bold text-success text-center my-5">Hardware-City</h1>
                                 <h2 className="text-4xl font-bold text-warning">Resell or Buy Second Hand Laptop Accessories.</h2>
                                 <p className="py-6 text-xl font-semibold">We are the most trusted and leading online marketplace for buying and selling your used laptop hardware parts in Bangladesh.</p>
-                                <Link to="/" className="btn btn-success text-white">All Category</Link>
+                                <Link to="/" className="btn btn-warning text-white">All Category</Link>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@ const Banner = () => {
                                 <h1 className="text-5xl font-bold text-success text-center my-5">Hardware-City</h1>
                                 <h2 className="text-4xl font-bold text-warning">Resell or Buy Second Hand Laptop Accessories.</h2>
                                 <p className="py-6 text-xl font-semibold">We are the most trusted and leading online marketplace for buying and selling your used laptop hardware parts in Bangladesh.</p>
-                                <Link to="/" className="btn btn-success text-white">All Category</Link>
+                                <Link to="/" className="btn btn-warning text-white">All Category</Link>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@ const Banner = () => {
                                 <h1 className="text-5xl font-bold text-success text-center my-5">Hardware-City</h1>
                                 <h2 className="text-4xl font-bold text-warning">Resell or Buy Second Hand Laptop Accessories.</h2>
                                 <p className="py-6 text-xl font-semibold">We are the most trusted and leading online marketplace for buying and selling your used laptop hardware parts in Bangladesh.</p>
-                                <Link to="/" className="btn btn-success text-white">All Category</Link>
+                                <Link to="/" className="btn btn-warning text-white">All Category</Link>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ const Banner = () => {
                                 <h1 className="text-5xl font-bold text-success text-center my-5">Hardware-City</h1>
                                 <h2 className="text-4xl font-bold text-warning">Resell or Buy Second Hand Laptop Accessories.</h2>
                                 <p className="py-6 text-xl font-semibold">We are the most trusted and leading online marketplace for buying and selling your used laptop hardware parts in Bangladesh.</p>
-                                <Link to="/" className="btn btn-success text-white">All Category</Link>
+                                <Link to="/" className="btn btn-warning text-white">All Category</Link>
                             </div>
                         </div>
                     </div>

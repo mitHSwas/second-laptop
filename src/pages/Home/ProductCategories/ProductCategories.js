@@ -17,8 +17,8 @@ const ProductCategories = () => {
     }
     return (
         <div className='container mx-auto grid'>
-            <h2 className="mx-auto mb-10 font-bold text-4xl">All Category Of Products</h2>
-            <div className='grid grid-cols-1 z-10 md:grid-cols-2 lg:grid-cols-3 mb-7'>
+            <h2 className="mx-auto my-14 font-bold text-5xl text-success">Product Category: </h2>
+            <div className='grid mx-auto gap-4 grid-cols-2 z-10 md:grid-cols-3 lg:grid-cols-5 mb-7'>
                 {
                     categories?.map(category => <ProductCategory
                         key={category._id}
