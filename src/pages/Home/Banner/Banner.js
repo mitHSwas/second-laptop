@@ -1,51 +1,79 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import banner1 from '../../../assets/images/banner/banner1.jpg'
 import banner2 from '../../../assets/images/banner/banner2.jpg'
 import banner3 from '../../../assets/images/banner/banner3.jpg'
+import banner4 from '../../../assets/images/banner/banner4.jpg'
 const Banner = () => {
     return (
         <div className='container mx-auto'>
-            <div className="carousel w-full">
-                <div id="slide3" className="carousel-item relative w-full">
-                    <img src={banner3} alt="" className="w-full h-4/5 my-auto rounded-lg" />
-                    <div className="absolute justify-start transform -translate-y-1/2 left-10 top-1/3">
-                        <h1 className="text-5xl text-lime-200 font-bold w-5/6 my-8">Viva-Visa is Global Immigration Consultants Ltd.</h1>
-                        <p className="lg:text-xl text-lime-200 font-semibold w-3/5">You are presumed to know the law or procedures system, but it is likely you will not be aware of every factor that may affect your case.</p>
-                        <br />
-                        <button className="btn btn-outline btn-warning ml-8">Contract Us</button>
-                    </div>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-
-                        <a href="#slide2" className="btn btn-circle h-2/4">❮</a>
-                        <a href="#slide1" className="btn btn-circle h-2/4">❯</a>
-                    </div>
-                </div>
-                <div id="slide1" className="carousel-item relative w-full">
-                    <img src={banner1} className="w-full h-4/5 my-auto rounded-lg" alt="" />
-                    <div className="absolute justify-start transform -translate-y-1/2 left-10 top-1/3">
-                        <h1 className="text-5xl text-gray-800 font-bold w-5/6 my-8">Consultancy that empowers you...</h1>
-                        <p className="lg:text-xl text-gray-700 font-semibold w-3/5">Viva-visa consultancy services have started its operation in 1999. </p>
-                        <br />
-                        <button className="btn btn-outline btn-warning ml-8">Our Solutions</button>
-                    </div>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle h-2/4">❮</a>
-                        <a href="#slide2" className="btn btn-circle h-2/4">❯</a>
+            <div className="carousel w-full overflow-hidden">
+                <div id="item1" className="carousel-item w-full py-16">
+                    <div className="hero py-10 bg-base-100">
+                        <div className="hero-content flex-col lg:flex-row-reverse">
+                            <div className='w-full lg:w-1/2'>
+                                <img src={banner1} className="w-full rounded-lg shadow-2xl" alt="" />
+                            </div>
+                            <div className='w-full lg:w-1/2'>
+                                <h1 className="text-5xl font-bold text-success text-center my-5">Hardware-City</h1>
+                                <h2 className="text-4xl font-bold text-warning">Resell or Buy Second Hand Laptop Accessories.</h2>
+                                <p className="py-6 text-xl font-semibold">We are the most trusted and leading online marketplace for buying and selling your used laptop hardware parts in Bangladesh.</p>
+                                <Link to="/" className="btn btn-success text-white">All Category</Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="slide2" className="carousel-item relative w-full">
-                    <img src={banner2} alt="" className="w-full h-4/5 my-auto rounded-lg" />
-                    <div className="absolute justify-start transform -translate-y-1/2 left-10 top-1/3">
-                        <h1 className="text-5xl text-lime-200 font-bold w-4/6 my-8">Emergence of New Ideas.</h1>
-                        <p className="lg:text-xl text-lime-200 font-semibold w-3/5">At present, out of five countries of most happy, affluent & economically solvent country around the world, Australia & Canada are main two.</p>
-                        <br />
-                        <button className="btn btn-outline btn-warning ml-8">Read More</button>
-                    </div>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle h-2/4">❮</a>
-                        <a href="#slide3" className="btn btn-circle h-2/4">❯</a>
+                <div id="item2" className="carousel-item w-full py-16">
+                    <div className="hero bg-base-100 py-10">
+                        <div className="hero-content flex-col lg:flex-row-reverse">
+                            <div className='w-full lg:w-1/2'>
+                                <img src={banner2} className="w-full rounded-lg shadow-2xl" alt="" />
+                            </div>
+                            <div className='w-full lg:w-1/2'>
+                                <h1 className="text-5xl font-bold text-success text-center my-5">Hardware-City</h1>
+                                <h2 className="text-4xl font-bold text-warning">Resell or Buy Second Hand Laptop Accessories.</h2>
+                                <p className="py-6 text-xl font-semibold">We are the most trusted and leading online marketplace for buying and selling your used laptop hardware parts in Bangladesh.</p>
+                                <Link to="/" className="btn btn-success text-white">All Category</Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div id="item3" className="carousel-item w-full py-16">
+                    <div className="hero bg-base-100 py-10">
+                        <div className="hero-content flex-col lg:flex-row-reverse">
+                            <div className='w-full lg:w-1/2'>
+                                <img src={banner3} className="w-full rounded-lg shadow-2xl" alt="" />
+                            </div>
+                            <div className='w-full lg:w-1/2'>
+                                <h1 className="text-5xl font-bold text-success text-center my-5">Hardware-City</h1>
+                                <h2 className="text-4xl font-bold text-warning">Resell or Buy Second Hand Laptop Accessories.</h2>
+                                <p className="py-6 text-xl font-semibold">We are the most trusted and leading online marketplace for buying and selling your used laptop hardware parts in Bangladesh.</p>
+                                <Link to="/" className="btn btn-success text-white">All Category</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="item4" className="carousel-item w-full py-16">
+                    <div className="hero bg-base-100 py-10">
+                        <div className="hero-content flex-col lg:flex-row-reverse">
+                            <div className='w-full lg:w-1/2'>
+                                <img src={banner4} className="w-full rounded-lg shadow-2xl" alt="" />
+                            </div>
+                            <div className='w-full lg:w-1/2'>
+                                <h1 className="text-5xl font-bold text-success text-center my-5">Hardware-City</h1>
+                                <h2 className="text-4xl font-bold text-warning">Resell or Buy Second Hand Laptop Accessories.</h2>
+                                <p className="py-6 text-xl font-semibold">We are the most trusted and leading online marketplace for buying and selling your used laptop hardware parts in Bangladesh.</p>
+                                <Link to="/" className="btn btn-success text-white">All Category</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="flex justify-center w-full py-2 gap-2">
+                <a href="#item1" className="btn btn-xs">1</a>
+                <a href="#item2" className="btn btn-xs">2</a>
+                <a href="#item3" className="btn btn-xs">3</a>
+                <a href="#item4" className="btn btn-xs">4</a>
             </div>
         </div>
     );
