@@ -22,13 +22,13 @@ const AddProduct = () => {
                 if (formData.success) {
                     const product = {
                         productName: data.product,
-                        reSellPrice: data.price,
-                        location: data.location,
-                        condition: data.category,
+                        sellerName: data.sellerName,
                         picture: formData.data.url,
-                        phone: data.phoneNumber,
+                        originalPrice: data.originalPrice,
+                        reSellPrice: data.resellPrice,
+                        yearOfUse: data.productAge,
+                        postedTime: new Date().toJSON().slice(0, 10).split('-').reverse().join('/'),
                         categoryName: data.category,
-                        email: user.email,
                     }
                     // save product to the database
                     fetch("https://y-tau-six.vercel.app/products", {
@@ -64,22 +64,29 @@ const AddProduct = () => {
                         {errors.product && <p className='text-red-500'>{errors.product?.message}</p>}
                     </div>
                     <div className="form-control w-full">
-                        <label className="label"><span className="label-text">Price</span></label>
-                        <input type="text" defaultValue="$" {...register("price", {
-                            required: "price is required"
+                        <label className="label"><span className="label-text">Seller Name</span></label>
+                        <input type="text" value={user?.displayName} {...register("sellerName", {
+                            required: "Seller name is required",
                         })} className="input input-bordered w-full" />
-                        {errors.price && <p className='text-red-500'>{errors.price?.message}</p>}
+                        {errors.sellerName && <p className='text-red-500'>{errors.sellerName?.message}</p>}
                     </div>
                     <div className="form-control w-full">
-                        <label className="label"><span className="label-text">Phone Number</span></label>
-                        <input type="text" {...register("phoneNumber", {
-                            required: "Phone Number is required",
+                        <label className="label"><span className="label-text">Original Price($)</span></label>
+                        <input type="text" {...register("originalPrice", {
+                            required: "Original price is required"
                         })} className="input input-bordered w-full" />
-                        {errors.phoneNumber && <p className='text-red-500'>{errors.phoneNumber?.message}</p>}
+                        {errors.originalPrice && <p className='text-red-500'>{errors.originalPrice?.message}</p>}
                     </div>
                     <div className="form-control w-full">
                         <label className="label"><span className="label-text">Email</span></label>
-                        <input defaultValue={user.email} disabled type="email" className="input input-bordered w-full" />
+                        <input value={user?.email} disabled type="email" className="input input-bordered w-full" />
+                    </div>
+                    <div className="form-control w-full">
+                        <label className="label"><span className="label-text">Resell Price($)</span></label>
+                        <input type="text" {...register("resellPrice", {
+                            required: "Resell price is required"
+                        })} className="input input-bordered w-full" />
+                        {errors.resellPrice && <p className='text-red-500'>{errors.resellPrice?.message}</p>}
                     </div>
                     <div className="form-control w-full">
                         <label className="label"><span className="label-text">Photo</span></label>
@@ -89,11 +96,11 @@ const AddProduct = () => {
                         {errors.image && <p className='text-red-500'>{errors.image?.message}</p>}
                     </div>
                     <div className="form-control w-full">
-                        <label className="label"><span className="label-text">Location</span></label>
-                        <input type="text" {...register("location", {
-                            required: "location is required"
+                        <label className="label"><span className="label-text">Product Age(Year)</span></label>
+                        <input type="number" {...register("productAge", {
+                            required: "Product age required"
                         })} className="input input-bordered w-full" />
-                        {errors.location && <p className='text-red-500'>{errors.location?.message}</p>}
+                        {errors.productAge && <p className='text-red-500'>{errors.productAge?.message}</p>}
                     </div>
                     <div className="form-control w-full">
                         <label className="label"><span className="label-text">Product Category</span></label>
@@ -103,14 +110,6 @@ const AddProduct = () => {
                             <option value='Keyboard'>Keyboard</option>
                             <option value='Laptop-Stand'>Laptop stand</option>
                             <option value='Mouse'>Mouse</option>
-                        </select>
-                    </div>
-                    <div className="form-control w-full">
-                        <label className="label"><span className="label-text">Product Condition</span></label>
-                        <select {...register("condition", { required: "condition is required" })} className="select select-bordered w-full max-w-xs">
-                            <option value='excellent'>Excellent</option>
-                            <option value="good">Good</option>
-                            <option value='fair'>Fair</option>
                         </select>
                     </div>
                 </div>

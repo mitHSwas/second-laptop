@@ -43,7 +43,7 @@ const BookingModal = ({ product, setProduct }) => {
             <div className="modal">
                 <div className="modal-box relative">
                     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <form onSubmit={handleBooking}>
+                    <form onSubmit={handleBooking} className="font-semibold">
                         <div className="grid gap-4 md:grid-cols-1 lg:grid-cols-2">
                             <div>
                                 <label className="label"><span className="label-text">Name</span></label>
@@ -71,7 +71,7 @@ const BookingModal = ({ product, setProduct }) => {
                             </div>
                             <div>
                                 <label className="label"><span className="label-text">Phone</span></label>
-                                <input type="tel" name="phone" placeholder='Your contract number' className="input input-bordered w-full" required />
+                                <input type="tel" name="phone" placeholder='Contract number' className="input input-bordered w-full" required />
                             </div>
                             <div>
                                 <label className="label"><span className="label-text">Location</span></label>
