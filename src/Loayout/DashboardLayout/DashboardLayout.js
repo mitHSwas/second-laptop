@@ -21,20 +21,20 @@ const DashboardLayout = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-54 text-base-content">
+                    <ul className="menu p-4 w-60 font-semibold text-base-content">
                         {
-                            isBuyer && <li><Link to="/dashboard/myorder">My Orders</Link></li>
+                            isBuyer && <li><Link className='hover:bg-amber-300 rounded-lg text-xl mx-auto' to="/dashboard/myorder">My Orders</Link></li>
                         }
                         {
                             isSeller && <>
-                                <li><Link to="/dashboard/addproduct">Add A Product</Link></li>
-                                <li><Link to="/dashboard/myproducts">My Products</Link></li>
+                                <li><Link className='hover:bg-amber-300 rounded-lg text-xl mx-auto' to="/dashboard/addproduct">Add Product</Link></li>
+                                <li><Link className='hover:bg-amber-300 rounded-lg text-xl mx-auto mt-2' to="/dashboard/myproducts">My Products</Link></li>
                             </>
                         }
                         {
                             isAdmin && <>
-                                <li><Link to="/dashboard/allbuyers">All Buyers</Link></li>
-                                <li><Link to="/dashboard/allsellers">All Sellers</Link></li>
+                                <li><Link className='hover:bg-amber-300 rounded-lg text-xl mx-auto' to="/dashboard/allbuyers">All Buyers</Link></li>
+                                <li><Link className='hover:bg-amber-300 rounded-lg text-xl mx-auto mt-2' to="/dashboard/allsellers">All Sellers</Link></li>
                             </>
                         }
                     </ul>

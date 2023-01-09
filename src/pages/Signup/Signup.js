@@ -74,8 +74,8 @@ const Signup = () => {
     }
     return (
         <div className='w-96 mx-auto border p-6 m-6'>
-            <h2 className="text-4xl my-3 font-bold text-center">SignUp</h2>
-            <form onSubmit={handleSubmit(handleSignup)}>
+            <h2 className="text-4xl my-3 font-bold text-center text-success">SignUp</h2>
+            <form onSubmit={handleSubmit(handleSignup)} className="font-semibold">
                 <label className="label"><span className="label-text">Name</span></label>
                 <input type="text" {...register("name", { required: "Name is required" })} placeholder="name" className="input input-bordered w-full my-1" />
                 {errors.name && <p className='text-red-500'>{errors.name?.message}</p>}
@@ -98,12 +98,12 @@ const Signup = () => {
                     <option defaultValue="buyer" value="buyer">Buyer</option>
                     <option value="seller">Seller</option>
                 </select>
-                <button className='btn btn-outline w-full' type="submit">Signup</button>
+                <button className='btn btn-outline w-full font-bold' type="submit">Signup</button>
                 <p className='text-sm mb-2'>Already have an account <Link className='text-info font-semibold' to='/login'>Please login</Link></p>
             </form>
             {signUpError && <p className='text-red-500'>{signUpError}</p>}
             <div className="divider">OR</div>
-            <button onClick={handleGoogleSignIn} className='btn btn-outline btn-warning w-full mb-5'>Google SignIn As Buyer</button>
+            <button onClick={handleGoogleSignIn} className='btn btn-outline btn-warning w-full mb-5 font-bold'>Google SignIn As Buyer</button>
         </div>
     );
 };

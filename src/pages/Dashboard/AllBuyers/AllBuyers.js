@@ -8,7 +8,7 @@ const AllBuyers = () => {
     const { user } = useContext(AuthContext);
     const url = `https://y-tau-six.vercel.app/allbuyers?email=${user?.email}`;
 
-    const { data: allbuyers = [], isLoading, refetch } = useQuery({
+    const { data: allBuyers = [], isLoading, refetch } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
@@ -40,11 +40,11 @@ const AllBuyers = () => {
     }
     return (
         <div>
-            <h3 className='text-3xl text-center mt-3 font-semibold'>My all buyers</h3>
+            <h3 className='text-4xl text-center text-success my-10 font-bold'>My All Buyers</h3>
             <div className="overflow-x-auto mt-3">
                 <table className="table w-full">
                     <thead>
-                        <tr>
+                        <tr className='font-semibold text-warning'>
                             <th>Index</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -54,12 +54,12 @@ const AllBuyers = () => {
                     </thead>
                     <tbody>
                         {
-                            allbuyers?.map((buyers, i) => <tr key={buyers._id}>
+                            allBuyers?.map((buyers, i) => <tr key={buyers._id} className="font-semibold">
                                 <th>{i + 1}</th>
                                 <td>{buyers.name}</td>
                                 <td>{buyers.email}</td>
                                 <td>{buyers.role}</td>
-                                <td><button onClick={() => handleDeleteBuyer(buyers._id)} className='btn btn-sm btn-error'>Delete</button></td>
+                                <td><button onClick={() => handleDeleteBuyer(buyers._id)} className='btn btn-sm btn-error text-white'>Delete</button></td>
                             </tr>)
                         }
                     </tbody>

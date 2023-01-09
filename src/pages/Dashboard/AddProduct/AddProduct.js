@@ -53,8 +53,8 @@ const AddProduct = () => {
     }
     return (
         <div className='w-4/5 p-7'>
-            <h3 className='text-4xl text-center font-semibold my-8'>Add A Product</h3>
-            <form onSubmit={handleSubmit(handleAddProduct)}>
+            <h3 className='text-4xl text-center font-bold text-success my-8'>Add A Product</h3>
+            <form onSubmit={handleSubmit(handleAddProduct)} className="font-semibold">
                 <div className='grid gap-4 md:grid-cols-1 lg:grid-cols-2'>
                     <div className="form-control w-full">
                         <label className="label"><span className="label-text">Product name</span></label>
@@ -101,6 +101,8 @@ const AddProduct = () => {
                             <option value='Display-Screen'>Display Screen</option>
                             <option value='Laptop-RAM'>Laptop RAM</option>
                             <option value='Keyboard'>Keyboard</option>
+                            <option value='Laptop-Stand'>Laptop stand</option>
+                            <option value='Mouse'>Mouse</option>
                         </select>
                     </div>
                     <div className="form-control w-full">
@@ -112,7 +114,7 @@ const AddProduct = () => {
                         </select>
                     </div>
                 </div>
-                <input className='btn btn-accent w-1/2 grid mx-auto text-white' value="Add Product" type="submit" />
+                <input className='btn btn-warning w-1/2 grid mx-auto text-white' value="Add Product" type="submit" />
             </form>
         </div>
     );

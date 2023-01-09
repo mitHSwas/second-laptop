@@ -8,7 +8,7 @@ const AllSellers = () => {
     const { user } = useContext(AuthContext);
     const url = `https://y-tau-six.vercel.app/allsellers?email=${user?.email}`;
 
-    const { data: allsellers = [], isLoading, refetch } = useQuery({
+    const { data: allSellers = [], isLoading, refetch } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
@@ -40,11 +40,11 @@ const AllSellers = () => {
     }
     return (
         <div>
-            <h3 className='text-3xl text-center mt-3 font-semibold'>My all sellers</h3>
+            <h3 className='text-4xl text-center my-10 font-bold text-success'>My All Sellers</h3>
             <div className="overflow-x-auto mt-3">
-                <table className="table w-full">
+                <table className="table w-full font-semibold">
                     <thead>
-                        <tr>
+                        <tr className='text-warning'>
                             <th>Index</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -54,12 +54,12 @@ const AllSellers = () => {
                     </thead>
                     <tbody>
                         {
-                            allsellers?.map((sellers, i) => <tr key={sellers._id}>
+                            allSellers?.map((sellers, i) => <tr key={sellers._id}>
                                 <th>{i + 1}</th>
                                 <td>{sellers.name}</td>
                                 <td>{sellers.email}</td>
                                 <td>{sellers.role}</td>
-                                <td><button onClick={() => handleDeleteSeller(sellers._id)} className='btn btn-sm btn-error'>Delete</button></td>
+                                <td><button onClick={() => handleDeleteSeller(sellers._id)} className='btn btn-sm btn-error text-white'>Delete</button></td>
                             </tr>)
                         }
                     </tbody>

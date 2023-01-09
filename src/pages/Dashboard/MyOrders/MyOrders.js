@@ -24,11 +24,11 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <h3 className='text-3xl text-center mt-6 font-semibold'>My Orders</h3>
+            <h3 className='text-4xl text-center text-success mt-6 font-bold'>My Order/Orders</h3>
             <div className="overflow-x-auto mt-8">
                 <table className="table w-full">
                     <thead>
-                        <tr>
+                        <tr className='text-warning font-bold text-xl'>
                             <th>Index</th>
                             <th>Image</th>
                             <th>Product</th>
@@ -40,7 +40,7 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            bookings?.map((booking, i) => <tr key={booking._id}>
+                            bookings?.map((booking, i) => <tr key={booking._id} className="font-semibold">
                                 <th>{i + 1}</th>
                                 <td><div className="avatar">
                                     <div className="w-16 rounded-full">
@@ -51,7 +51,7 @@ const MyOrders = () => {
                                 <td>{booking.phone}</td>
                                 <td>{booking.location}</td>
                                 <td>{booking.reSellPrice}</td>
-                                <td><button className='btn btn-sm btn-primary'>Pay Now</button></td>
+                                <td><button className='btn text-white btn-warning'>Pay Now</button></td>
                             </tr>)
                         }
                     </tbody>

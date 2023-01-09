@@ -37,11 +37,11 @@ const MyProducts = () => {
 
     return (
         <div>
-            <h2 className="text-4xl font-semibold my-8 text-center">My Added Products</h2>
+            <h2 className="text-4xl font-bold text-success my-8 text-center">My Added Products</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
-                        <tr>
+                        <tr className='text-warning'>
                             <th>Index</th>
                             <th>Product</th>
                             <th>Name</th>
@@ -53,7 +53,7 @@ const MyProducts = () => {
                     </thead>
                     <tbody>
                         {
-                            products.map((product, i) => <tr key={i}>
+                            products.map((product, i) => <tr key={i} className="text-semibold">
                                 <th>{i + 1}</th>
                                 <td><div className="avatar">
                                     <div className="w-14 rounded-full">
@@ -65,7 +65,7 @@ const MyProducts = () => {
                                 <td>{product.condition}</td>
                                 <td>{product.categoryName}</td>
                                 <td>
-                                    <label onClick={() => handleDeleteProduct(product._id)} className="btn btn-sm btn-error">Delete</label>
+                                    <label onClick={() => handleDeleteProduct(product._id)} className="btn btn-sm btn-error text-white">Delete</label>
                                 </td>
                             </tr>)
                         }
