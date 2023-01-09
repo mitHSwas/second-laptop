@@ -6,7 +6,7 @@ const Testimonial = () => {
             <h1 className="py-10 text-5xl font-bold leading-none text-center text-success">What our customers are saying about us</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 items-center justify-center">
                 <div className="flex mx-auto flex-col max-w-sm my-3 shadow-lg">
-                    <div className="py-8 px-3 rounded-t-lg bg-base-300">
+                    <div className="py-8 px-3 rounded-t-lg bg-base-100">
                         <p className="relative px-4 py-3 text-lg italic text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
                                 <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
@@ -25,7 +25,7 @@ const Testimonial = () => {
                     </div>
                 </div>
                 <div className="flex flex-col max-w-sm  mx-auto my-3 shadow-lg">
-                    <div className="py-8 px-3 rounded-t-lg bg-base-300">
+                    <div className="py-8 px-3 rounded-t-lg bg-base-100">
                         <p className="relative px-4 py-3 text-lg italic text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
                                 <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
@@ -44,7 +44,7 @@ const Testimonial = () => {
                     </div>
                 </div>
                 <div className="flex flex-col max-w-sm mx-auto my-3 shadow-lg">
-                    <div className="py-8 px-3 rounded-t-lg bg-base-300">
+                    <div className="py-8 px-3 rounded-t-lg bg-base-100">
                         <p className="relative px-4 py-3 text-lg italic text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
                                 <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
