@@ -7,7 +7,7 @@ const FeatureCard = ({ card }) => {
             <div className=" mx-auto card-body items-center text-center">
                 <p className='px-5 pt-5 text-7xl hover:text-white text-red-600'>{icon}</p>
                 <h2 className="card-title text-3xl font-semibold">{title}</h2>
-                <p>{description}</p>
+                <p className='font-semibold'>{description}</p>
             </div>
         </div>
     );

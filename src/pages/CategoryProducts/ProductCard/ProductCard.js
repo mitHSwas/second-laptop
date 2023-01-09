@@ -6,7 +6,7 @@ const ProductCard = ({ product, setProduct }) => {
         <section>
             <div className="card card-compact w-80 bg-base-200 shadow-xl">
                 <figure><img className='bg-base-00 p-1 rounded-2xl' src={picture} alt="Shoes" /></figure>
-                <div className="card-body">
+                <div className="card-body font-semibold">
                     <h2 className="card-title">{productName}</h2>
                     <h4 className='text-xl'>Seller:{sellerName}</h4>
                     <p>Original Price: ${originalPrice}</p>

@@ -13,7 +13,20 @@ const Header = () => {
             .catch(err => console.err(err))
     }
     const menuItems = <>
-        <li className='ml-5'><Link to="/blogs" className='hover:bg-amber-300 rounded-lg text-xl'>Blogs</Link></li>
+        <li className='mr-5'><Link to="/blogs" className='hover:bg-amber-300 rounded-lg text-xl'>Blogs</Link></li>
+        <li tabIndex={0} className="hover:bg-amber-300 rounded-lg text-xl">
+            <a>
+                Category
+                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+            </a>
+            <ul className="p-2 bg-base-100">
+                <li><Link to="/category/Laptop-RAM" className='mb-2 hover:bg-amber-300 rounded-lg'>Laptop Ram</Link></li>
+                <li><Link to="/category/Display-Screen" className='mb-2 hover:bg-amber-300 rounded-lg'>Display</Link></li>
+                <li><Link to="/category/Keyboard" className='mb-2 hover:bg-amber-300 rounded-lg'>Keyboard</Link></li>
+                <li><Link to="/category/Laptop-stand" className='mb-2 hover:bg-amber-300 rounded-lg'>Laptop Stand</Link></li>
+                <li><Link to="/category/Mouse" className='mb-2 hover:bg-amber-300 rounded-lg'>Mouse</Link></li>
+            </ul>
+        </li>
         {
             user ?
                 <>

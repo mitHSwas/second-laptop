@@ -47,27 +47,27 @@ const BookingModal = ({ product, setProduct }) => {
                         <div className="grid gap-4 md:grid-cols-1 lg:grid-cols-2">
                             <div>
                                 <label className="label"><span className="label-text">Name</span></label>
-                                <input type="text" disabled defaultValue={name} className="input input-bordered w-full" />
+                                <input type="text" disabled value={name} className="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label className="label"><span className="label-text">Email</span></label>
-                                <input type="text" disabled defaultValue={email} className="input input-bordered w-full" />
+                                <input type="text" disabled value={email} className="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label className="label"><span className="label-text">Product</span></label>
-                                <input type="text" disabled defaultValue={productName} className="input input-bordered w-full" />
+                                <input type="text" disabled value={productName} className="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label className="label"><span className="label-text">photoURL</span></label>
-                                <input type="text" disabled defaultValue={picture} className="input input-bordered w-full" />
+                                <input type="text" disabled value={picture} className="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label className="label"><span className="label-text">Seller</span></label>
-                                <input type="text" disabled defaultValue={sellerName} className="input input-bordered w-full" />
+                                <input type="text" disabled value={sellerName} className="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label className="label"><span className="label-text">Selling Price($)</span></label>
-                                <input type="text" disabled defaultValue={reSellPrice} className="input input-bordered w-full" />
+                                <input type="text" disabled value={reSellPrice} className="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label className="label"><span className="label-text">Phone</span></label>

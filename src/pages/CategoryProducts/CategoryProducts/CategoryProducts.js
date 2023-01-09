@@ -10,9 +10,9 @@ const CategoryProducts = () => {
         <section className='container mx-auto my-10'>
             <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
-                    products.map(product => <ProductCard
-                        key={product._id}
-                        product={product}
+                    products.map(pd => <ProductCard
+                        key={pd._id}
+                        product={pd}
                         setProduct={setProduct}
                     >
 
