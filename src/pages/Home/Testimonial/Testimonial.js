@@ -3,9 +3,9 @@ import React from 'react';
 const Testimonial = () => {
     return (
         <section className="container mx-auto my-8 bg-zinc-50">
-            <h1 className="py-10 text-5xl font-bold leading-none text-center text-success">What our customers are saying about us</h1>
+            <h1 className="my-5 md:my-8 lg:my-14 text-3xl md:text-4xl lg:text-5xl font-bold leading-none text-center text-success">What our customers are saying about us</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 items-center justify-center">
-                <div className="flex mx-auto flex-col max-w-sm my-3 shadow-lg">
+                <div className="flex mx-auto flex-col w-72 lg:w-80 my-3 shadow-lg">
                     <div className="py-8 px-3 rounded-t-lg bg-base-100">
                         <p className="relative px-4 py-3 text-lg italic text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
@@ -24,7 +24,7 @@ const Testimonial = () => {
                         <p className="text-sm uppercase">SOFTWARE ARCHITECT</p>
                     </div>
                 </div>
-                <div className="flex flex-col max-w-sm  mx-auto my-3 shadow-lg">
+                <div className="flex flex-col w-72 lg:w-80 mx-auto my-3 shadow-lg">
                     <div className="py-8 px-3 rounded-t-lg bg-base-100">
                         <p className="relative px-4 py-3 text-lg italic text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">
@@ -43,7 +43,7 @@ const Testimonial = () => {
                         <p className="text-sm uppercase">Business Person</p>
                     </div>
                 </div>
-                <div className="flex flex-col max-w-sm mx-auto my-3 shadow-lg">
+                <div className="flex flex-col w-72 lg:w-80 mx-auto my-3 shadow-lg">
                     <div className="py-8 px-3 rounded-t-lg bg-base-100">
                         <p className="relative px-4 py-3 text-lg italic text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-8 h-8 text-violet-400">

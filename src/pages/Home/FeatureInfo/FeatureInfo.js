@@ -23,8 +23,8 @@ const FeatureInfo = () => {
     ]
     return (
         <div className='container grid mx-auto'>
-            <h2 className="mx-auto my-14 text-success font-bold text-5xl">Our Highlighted Features</h2>
-            <div className='grid gap-10 mb-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <h2 className="mx-auto my-5 md:my-8 lg:my-14 text-success font-bold text-3xl md:text-4xl lg:text-5xl">Our Highlighted Features</h2>
+            <div className='grid gap-2 md:gap-5 lg:gap-10 mb-5 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     infoCards.map((card, i) => <FeatureCard
                         card={card}

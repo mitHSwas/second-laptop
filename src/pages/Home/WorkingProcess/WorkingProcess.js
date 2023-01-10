@@ -7,7 +7,7 @@ import Step4 from '../../../assets/images/workingProcess/pickUp2.gif';
 const WorkingProcess = () => {
     return (
         <div className='container mx-auto mt-10'>
-            <h1 className='mx-auto text-center text-5xl font-bold text-success pb-14'>How Hardware City Works:</h1>
+            <h1 className='mx-auto text-center text-3xl md:text-4xl lg:text-5xl font-bold text-success pb-14'>How Hardware City Works:</h1>
             <div className='grid w-full gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
                 <div className='mx-auto'>
                     <div className="avatar w-full">

@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer mx-auto p-10 bg-base-300 text-base-content container">
+            <footer className="footer mx-auto p-10 bg-base-300 font-semibold text-base-content container">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover" href="/">Branding</a>
