@@ -23,6 +23,7 @@ const AddProduct = () => {
                     const product = {
                         productName: data.product,
                         sellerName: data.sellerName,
+                        email: user.email,
                         picture: formData.data.url,
                         originalPrice: data.originalPrice,
                         reSellPrice: data.resellPrice,
@@ -108,7 +109,7 @@ const AddProduct = () => {
                             <option value='Display-Screen'>Display Screen</option>
                             <option value='Laptop-RAM'>Laptop RAM</option>
                             <option value='Keyboard'>Keyboard</option>
-                            <option value='Laptop-Stand'>Laptop stand</option>
+                            <option value='Laptop-stand'>Laptop stand</option>
                             <option value='Mouse'>Mouse</option>
                         </select>
                     </div>

@@ -16,6 +16,7 @@ const MyProducts = () => {
             return data;
         }
     })
+    console.log("products", products);
     const handleDeleteProduct = (id) => {
         fetch(`https://y-tau-six.vercel.app/products/${id}`, {
             method: "DELETE",
