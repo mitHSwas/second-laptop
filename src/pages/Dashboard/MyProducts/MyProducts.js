@@ -38,7 +38,7 @@ const MyProducts = () => {
 
     return (
         <div>
-            <h2 className="text-4xl font-bold text-success my-8 text-center">My Added Products</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl my-5 md:my-8 lg:my-10 font-bold text-success text-center">My Added Products</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -47,8 +47,8 @@ const MyProducts = () => {
                             <th>Product</th>
                             <th>Name</th>
                             <th>Price</th>
-                            <th>Condition</th>
                             <th>Category</th>
+                            <th>Click For</th>
                             <th>Click For</th>
                         </tr>
                     </thead>
@@ -63,8 +63,10 @@ const MyProducts = () => {
                                 </div></td>
                                 <td>{product.productName}</td>
                                 <td>{product.reSellPrice}</td>
-                                <td>{product.condition}</td>
                                 <td>{product.categoryName}</td>
+                                <td>
+                                    <label className="btn btn-sm btn-success text-white">Advertise</label>
+                                </td>
                                 <td>
                                     <label onClick={() => handleDeleteProduct(product._id)} className="btn btn-sm btn-error text-white">Delete</label>
                                 </td>

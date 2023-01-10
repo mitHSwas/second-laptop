@@ -24,7 +24,7 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <h3 className='text-4xl text-center text-success mt-6 font-bold'>My Order/Orders</h3>
+            <h3 className='text-3xl md:text-3xl lg:text-4xl text-center text-success mt-6 font-bold'>My Order/Orders</h3>
             <div className="overflow-x-auto mt-8">
                 <table className="table w-full">
                     <thead>
@@ -50,8 +50,8 @@ const MyOrders = () => {
                                 <td>{booking.productName}</td>
                                 <td>{booking.phone}</td>
                                 <td>{booking.location}</td>
-                                <td>{booking.reSellPrice}</td>
-                                <td><button className='btn text-white btn-warning'>Pay Now</button></td>
+                                <td>${booking.reSellPrice}</td>
+                                <td><button className='btn btn-sm text-white btn-warning'>Pay Now</button></td>
                             </tr>)
                         }
                     </tbody>

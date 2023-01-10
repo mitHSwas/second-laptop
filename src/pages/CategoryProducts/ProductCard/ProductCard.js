@@ -3,7 +3,7 @@ import React from 'react';
 const ProductCard = ({ product, setProduct }) => {
     const { _id, productName, picture, originalPrice, reSellPrice, sellerName, yearOfUse, postedTime } = product;
     return (
-        <section>
+        <section className='mx-auto'>
             <div className="card card-compact w-80 bg-base-200 shadow-xl">
                 <figure><img className='bg-base-00 w-72 p-1 rounded-2xl mt-3' src={picture} alt="Shoes" /></figure>
                 <div className="card-body font-semibold">

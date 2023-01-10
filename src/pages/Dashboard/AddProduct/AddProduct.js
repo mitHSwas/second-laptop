@@ -53,8 +53,8 @@ const AddProduct = () => {
             })
     }
     return (
-        <div className='w-4/5 p-7'>
-            <h3 className='text-4xl text-center font-bold text-success my-8'>Add A Product</h3>
+        <div className='container mx-auto w-4/5 p-7'>
+            <h3 className='text-3xl md:text-3xl lg:text-4xl text-center font-bold text-success my-5 md:my-8 lg:my-10'>Add A Product</h3>
             <form onSubmit={handleSubmit(handleAddProduct)} className="font-semibold">
                 <div className='grid gap-4 md:grid-cols-1 lg:grid-cols-2'>
                     <div className="form-control w-full">
